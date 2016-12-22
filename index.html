@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title>My App</title>
+  <link rel="stylesheet" href="css/framework7.ios.min.css">
+  <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Statusbar -->
+    <f7-statusbar></f7-statusbar>
+
+    <!-- Left Panel -->
+    <f7-panel left reveal layout="dark">
+      <f7-view id="left-panel-view" navbar-through :dynamic-navbar="true">
+        <f7-navbar title="Left Panel"></f7-navbar>
+        <f7-pages>
+          <f7-page>
+            <f7-block inner>
+              <p>Left panel content goes here</p>
+            </f7-block>
+            <f7-block-title>Load page in panel</f7-block-title>
+            <f7-list>
+              <f7-list-item link="/about/" title="About"></f7-list-item>
+              <f7-list-item link="/form/" title="Form"></f7-list-item>
+            </f7-list>
+            <f7-block-title>Load page in main view</f7-block-title>
+            <f7-list>
+              <f7-list-item link="/about/" title="About" link-view="#main-view" link-close-panel></f7-list-item>
+              <f7-list-item link="/form/" title="Form" link-view="#main-view" link-close-panel></f7-list-item>
+            </f7-list>
+          </f7-page>
+        </f7-pages>
+      </f7-view>
+    </f7-panel>
+
+    <!-- Right Panel -->
+    <f7-panel right cover layout="dark">
+      <f7-view id="right-panel-view" navbar-through :dynamic-navbar="true">
+        <f7-navbar title="Right Panel" sliding></f7-navbar>
+        <f7-pages>
+          <f7-page>
+            <f7-block>
+              <p>Right panel content goes here</p>
+            </f7-block>
+            <f7-block-title>Load page in panel</f7-block-title>
+            <f7-list>
+              <f7-list-item link="/about/" title="About"></f7-list-item>
+              <f7-list-item link="/form/" title="Form"></f7-list-item>
+            </f7-list>
+            <f7-block-title>Load page in main view</f7-block-title>
+            <f7-list>
+              <f7-list-item link="/about/" title="About" link-view="#main-view" link-close-panel></f7-list-item>
+              <f7-list-item link="/form/" title="Form" link-view="#main-view" link-close-panel></f7-list-item>
+            </f7-list>
+          </f7-page>
+        </f7-pages>
+      </f7-view>
+    </f7-panel>
+
+    <!-- Main Views -->
+    <f7-views>
+      <f7-view id="main-view" navbar-through :dynamic-navbar="true" main>
+        <!-- Navbar -->
+        <f7-navbar>
+          <f7-nav-left>
+            <f7-link icon="icon-bars" open-panel="left"></f7-link>
+          </f7-nav-left>
+          <f7-nav-center sliding>Framework7</f7-nav-center>
+          <f7-nav-right>
+            <f7-link icon="icon-bars" open-panel="right"></f7-link>
+          </f7-nav-right>
+        </f7-navbar>
+        <!-- Pages -->
+        <f7-pages>
+          <f7-page>
+            <f7-block-title>Welcome to my App</f7-block-title>
+            <f7-block inner>
+              <p>Duis sed erat ac eros ultrices pharetra id ut tellus. Praesent rhoncus enim ornare ipsum aliquet ultricies. Pellentesque sodales erat quis elementum sagittis.</p>
+            </f7-block>
+            <f7-block-title>Navigation</f7-block-title>
+            <f7-list>
+              <f7-list-item link="/about/" title="About"></f7-list-item>
+              <f7-list-item link="/form/" title="Form"></f7-list-item>
+              <f7-list-item link="/dynamic-route/blog/45/post/125/?foo=bar#about" title="Dynamic Route"></f7-list-item>
+            </f7-list>
+            <f7-block-title>Side Panels</f7-block-title>
+            <f7-block>
+              <f7-grid>
+                <f7-col width="50">
+                  <f7-button open-panel="left">Left Panel</f7-button>
+                </f7-col>
+                <f7-col width="50">
+                  <f7-button open-panel="right">Right Panel</f7-button>
+                </f7-col>
+              </f7-grid>
+            </f7-block>
+            <f7-block-title>Modals</f7-block-title>
+            <f7-block>
+              <f7-grid>
+                <f7-col width="50">
+                  <f7-button open-popup="#popup">Popup</f7-button>
+                </f7-col>
+                <f7-col width="50">
+                  <f7-button open-login-screen="#login-screen">Login Screen</f7-button>
+                </f7-col>
+              </f7-grid>
+            </f7-block>
+          </f7-page>
+        </f7-pages>
+      </f7-view>
+    </f7-views>
+
+    <!-- Popup -->
+    <f7-popup id="popup">
+      <f7-view navbar-fixed>
+        <f7-pages>
+          <f7-page>
+            <f7-navbar title="Popup">
+              <f7-nav-right>
+                <f7-link close-popup>Close</f7-link>
+              </f7-nav-right>
+            </f7-navbar>
+            <f7-block>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, architecto. Cupiditate laudantium rem nesciunt numquam, ipsam. Voluptates omnis, a inventore atque ratione aliquam. Omnis iusto nemo quos ullam obcaecati, quod.</f7-block>
+          </f7-page>
+        </f7-pages>
+      </f7-view>
+    </f7-popup>
+
+    <!-- Login Screen -->
+    <f7-login-screen id="login-screen">
+      <f7-view>
+        <f7-pages>
+          <f7-page login-screen>
+            <f7-login-screen-title>Login</f7-login-screen-title>
+            <f7-list form>
+              <f7-list-item>
+                <f7-label>Username</f7-label>
+                <f7-input name="username" placeholder="Username" type="text"></f7-input>
+              </f7-list-item>
+              <f7-list-item>
+                <f7-label>Password</f7-label>
+                <f7-input name="password" type="password" placeholder="Password"></f7-input>
+              </f7-list-item>
+            </f7-list>
+            <f7-list>
+              <f7-list-button title="Sign In" close-login-screen></f7-list-button>
+              <f7-list-label>
+                <p>Click Sign In to close Login Screen</p>
+              </f7-list-label>
+            </f7-list>
+          </f7-page>
+        </f7-pages>
+      </f7-view>
+    </f7-login-screen>
+  </div>
+
+  <!-- About Page Template -->
+  <template id="page-about">
+    <f7-page>
+      <f7-navbar title="About" back-link="Back" sliding></f7-navbar>
+      <f7-block inner>
+        <p>Here is About page!</p>
+        <p>You can go <f7-link back>back</f7-link>.</p>
+        <p>Mauris posuere sit amet metus id venenatis. Ut ante dolor, tempor nec commodo rutrum, varius at sem. Nullam ac nisi non neque ornare pretium. Nulla mauris mauris, consequat et elementum sit amet, egestas sed orci. In hac habitasse platea dictumst.</p>
+        <p>Fusce eros lectus, accumsan eget mi vel, iaculis tincidunt felis. Nulla tincidunt pharetra sagittis. Fusce in felis eros. Nulla sit amet aliquam lorem, et gravida ipsum. Mauris consectetur nisl non sollicitudin tristique. Praesent vitae metus ac quam rhoncus mattis vel et nisi. Aenean aliquet, felis quis dignissim iaculis, lectus quam tincidunt ligula, et venenatis turpis risus sed lorem. Morbi eu metus elit. Ut vel diam dolor.</p>
+      </f7-block>
+    </f7-page>
+  </template>
+
+  <!-- Form Page Template -->
+  <template id="page-form">
+    <f7-page>
+      <f7-navbar title="Form" back-link="Back" sliding></f7-navbar>
+      <f7-block-title>Form</f7-block-title>
+      <f7-list form>
+        <f7-list-item>
+          <f7-label>Name</f7-label>
+          <f7-input type="text" placeholder="Name"></f7-input>
+        </f7-list-item>
+        <f7-list-item>
+          <f7-label>Password</f7-label>
+          <f7-input type="password" placeholder="Password"></f7-input>
+        </f7-list-item>
+        <f7-list-item>
+          <f7-label>E-mail</f7-label>
+          <f7-input type="email" placeholder="E-mail"></f7-input>
+        </f7-list-item>
+        <f7-list-item>
+          <f7-label>URL</f7-label>
+          <f7-input type="url" placeholder="URL"></f7-input>
+        </f7-list-item>
+        <f7-list-item>
+          <f7-label>Phone</f7-label>
+          <f7-input type="tel" placeholder="Phone"></f7-input>
+        </f7-list-item>
+        <f7-list-item>
+          <f7-label>Birth date</f7-label>
+          <f7-input type="date" placeholder="Birth date" value="2014-04-30"></f7-input>
+        </f7-list-item>
+        <f7-list-item>
+          <f7-label>Date time</f7-label>
+          <f7-input type="datetime-local"></f7-input>
+        </f7-list-item>
+        <f7-list-item>
+          <f7-label>Gender</f7-label>
+          <f7-input type="select">
+            <option value="1">Male</option>
+            <option value="1">Female</option>
+          </f7-input>
+        </f7-list-item>
+        <f7-list-item>
+          <f7-label>Switch</f7-label>
+          <f7-input type="switch"></f7-input>
+        </f7-list-item>
+        <f7-list-item>
+          <f7-label>Range</f7-label>
+          <f7-input type="range" min="0" max="100" step="1" value="90"></f7-input>
+        </f7-list-item>
+        <f7-list-item>
+          <f7-label>Textarea</f7-label>
+          <f7-input type="textarea" placeholder="Textarea"></f7-input>
+        </f7-list-item>
+      </f7-list>
+
+      <f7-block-title>Form With Floating Labels</f7-block-title>
+      <f7-list form>
+        <f7-list-item>
+          <f7-label floating>Name</f7-label>
+          <f7-input type="text" placeholder="Name"></f7-input>
+        </f7-list-item>
+        <f7-list-item>
+          <f7-label floating>Password</f7-label>
+          <f7-input type="password" placeholder="Password"></f7-input>
+        </f7-list-item>
+        <f7-list-item>
+          <f7-label floating>E-mail</f7-label>
+          <f7-input type="email" placeholder="E-mail"></f7-input>
+        </f7-list-item>
+      </f7-list>
+
+      <f7-block-title>Form Without Labels</f7-block-title>
+      <f7-list form>
+        <f7-list-item>
+          <f7-input type="text" placeholder="Name"></f7-input>
+        </f7-list-item>
+        <f7-list-item>
+          <f7-input type="password" placeholder="Password"></f7-input>
+        </f7-list-item>
+        <f7-list-item>
+          <f7-input type="email" placeholder="E-mail"></f7-input>
+        </f7-list-item>
+      </f7-list>
+
+      <f7-block-title>Checkboxes</f7-block-title>
+      <f7-list form>
+        <f7-list-item v-for="n in 3" checkbox name="my-checkbox" :value="n" :title="'Checkbox ' + n"></f7-list-item>
+      </f7-list>
+
+      <f7-block-title>Radios</f7-block-title>
+      <f7-list form>
+        <f7-list-item v-for="n in 3" radio name="my-radio" :checked="n === 1" :value="n" :title="'Radio ' + n"></f7-list-item>
+      </f7-list>
+
+      <f7-block-title>Buttons</f7-block-title>
+      <f7-block inner>
+        <p><f7-button>Button</f7-button></p>
+        <p><f7-button round>Button Round</f7-button></p>
+        <p><f7-button fill>Button Fill</f7-button></p>
+        <p>
+          <f7-buttons>
+            <f7-button round active>Button 1</f7-button>
+            <f7-button round>Button 2</f7-button>
+            <f7-button round>Button 3</f7-button>
+          </f7-buttons>
+        </p>
+        <p>
+          <f7-buttons color="orange">
+            <f7-button round big>Button 1</f7-button>
+            <f7-button round big active>Button 2</f7-button>
+            <f7-button round big>Button 3</f7-button>
+          </f7-buttons>
+        </p>
+        <p>
+          <f7-grid>
+            <f7-col><f7-button big fill color="green">Send</f7-button></f7-col>
+            <f7-col><f7-button big fill color="red">Delete</f7-button></f7-col>
+          </f7-grid>
+        </p>
+        <p>
+          <f7-grid>
+            <f7-col><f7-button fill raised color="green">Raised</f7-button></f7-col>
+            <f7-col><f7-button raised color="red">Raised</f7-button></f7-col>
+            <f7-col><f7-button fill raised color="pink">Raised</f7-button></f7-col>
+          </f7-grid>
+        </p>
+      </f7-block>
+    </f7-page>
+  </template>
+
+  <!-- Dynamic Routing Page Template -->
+  <template id="page-dynamic-routing">
+    <f7-page>
+      <f7-navbar title="Dynamic Route" back-link="Back" sliding></f7-navbar>
+      <f7-block inner>
+        <ul>
+          <li><b>Url:</b> {{$route.url}}</li>
+          <li><b>Path:</b> {{$route.path}}</li>
+          <li><b>Hash:</b> {{$route.hash}}</li>
+          <li><b>Params:</b>
+            <ul>
+              <li v-for="(value, key) in $route.params"><b>{{key}}:</b> {{value}}</li>
+            </ul>
+          </li>
+          <li><b>Query:</b>
+            <ul>
+              <li v-for="(value, key) in $route.query"><b>{{key}}:</b> {{value}}</li>
+            </ul>
+          </li>
+          <li><b>Route:</b> {{$route.route}}</li>
+        </ul>
+      </f7-block>
+      <f7-block inner>
+        <f7-link @click="$router.back()">Go back via Router API</f7-link>
+      </f7-block>
+    </f7-page>
+  </template>
+
+  <script src="js/framework7.min.js"></script>
+  <script src="js/vue.min.js"></script>
+  <script src="js/framework7-vue.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
