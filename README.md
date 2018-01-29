@@ -4,7 +4,7 @@ A simple Framework7 Vue setup in a single HTML file
 
 This template is targeted at beginners who want to start exploring Framework7 & Vue without the distraction of a complicated development environment.
 
-For advanced features such as asset compilation, hot-reload and CSS extraction, we recommend that more experienced developers use [Framework7 Vue Webpack Template](https://github.com/framework7io/framework7-template-webpack)
+For advanced features such as asset compilation, hot-reload and CSS extraction, we recommend that more experienced developers use [Framework7 Vue Webpack Template](https://github.com/framework7io/framework7-template-vue-webpack)
 
 ## Usage
 
