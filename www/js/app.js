@@ -1,5 +1,5 @@
 // Init F7 Vue Plugin
-Vue.use(Framework7Vue, Framework7)
+Framework7.use(Framework7Vue);
 
 // Init Page Components
 Vue.component('page-about', {
@@ -18,30 +18,34 @@ Vue.component('page-not-found', {
 // Init App
 new Vue({
   el: '#app',
-  // Init Framework7 by passing parameters here
-  framework7: {
-    root: '#app', // App root element
-    id: 'io.framework7.testapp', // App bundle ID
-    name: 'Framework7', // App name
-    theme: 'auto', // Automatic theme detection
-    // App routes
-    routes: [
-      {
-        path: '/about/',
-        component: 'page-about'
-      },
-      {
-        path: '/form/',
-        component: 'page-form'
-      },
-      {
-        path: '/dynamic-route/blog/:blogId/post/:postId/',
-        component: 'page-dynamic-routing'
-      },
-      {
-        path: '(.*)',
-        component: 'page-not-found',
-      },
-    ],
-  }
+  data: function () {
+    return {
+      // Framework7 parameters here
+      f7params: {
+        root: '#app', // App root element
+        id: 'io.framework7.testapp', // App bundle ID
+        name: 'Framework7', // App name
+        theme: 'auto', // Automatic theme detection
+        // App routes
+        routes: [
+          {
+            path: '/about/',
+            component: 'page-about'
+          },
+          {
+            path: '/form/',
+            component: 'page-form'
+          },
+          {
+            path: '/dynamic-route/blog/:blogId/post/:postId/',
+            component: 'page-dynamic-routing'
+          },
+          {
+            path: '(.*)',
+            component: 'page-not-found',
+          },
+        ],
+      }
+    }
+  },
 });

@@ -8,7 +8,7 @@
   },
   "scripts": {
     "serve": "http-server ./www/ -o -c 1 -a localhost",
-    "copy-f7": "cpy node_modules/framework7/dist/js/*.* www/libs/framework7/js && cpy node_modules/framework7/dist/css/*.* www/libs/framework7/css && cpy node_modules/framework7-vue/dist/*.* www/libs/framework7-vue/ && cpy node_modules/vue/dist/*.* www/libs/vue/ && cpy node_modules/framework7-icons/fonts/*.* www/fonts && cpy node_modules/material-design-icons/iconfont/*.{eot,ttf,woff,woff2} www/fonts",
+    "copy-f7": "cpy node_modules/framework7/js/*.* www/libs/framework7/js && cpy node_modules/framework7/css/*.* www/libs/framework7/css && cpy node_modules/framework7-vue/*.* www/libs/framework7-vue/ && cpy node_modules/vue/dist/*.* www/libs/vue/ && cpy node_modules/framework7-icons/fonts/*.* www/fonts && cpy node_modules/material-design-icons/iconfont/*.{eot,ttf,woff,woff2} www/fonts",
     "postinstall": "npm run copy-f7"
   },
   "keywords": [
@@ -30,10 +30,10 @@
   "homepage": "https://github.com/framework7io/framework7-template-vue-simple#readme",
   "devDependencies": {
     "cpy-cli": "^1.0.1",
-    "vue": "^2.5.13",
-    "framework7": "^2.2.5",
-    "framework7-vue": "^2.2.5",
-    "framework7-icons": "^0.8.9",
+    "vue": "^2.5.16",
+    "framework7": "^3.0.0",
+    "framework7-vue": "^3.0.0",
+    "framework7-icons": "^0.9.1",
     "http-server": "^0.10.0",
     "material-design-icons": "^3.0.1"
   }
